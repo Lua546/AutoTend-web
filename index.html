@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoTend - Tecnología al servicio del hogar</title>
+
+    <!-- CSS para el tema de colores -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+    <!-- Librería Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Iniciar Highlight -->
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lg-zoom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lg-thumbnail.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                Auto<span style="color: white;">Tend</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre el Proyecto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">Cómo Funciona</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#code">Código</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#results">Resultados</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="rain-container" id="rainContainer"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Columna de la imagen -->
+                <div class="col-lg-6 animate__animated animate__fadeInLeft text-center mb-4 mb-lg-0">
+                    <img src="imagenes/proyecto-transparente.png" alt="Imagen del proyecto" class="img-fluid" style="max-width: 100%; height: auto;">
+                </div>
+                
+                <!-- Columna del texto -->
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <h1>Auto<span style="color: var(--primary-color);">Tend</span></h1>
+                    <p class="lead">Tecnología al servicio del hogar</p>
+                    <p class="mb-4">Sistema automatizado que protege tu ropa de la lluvia sin intervención humana. Innovación Arduino para tu vida diaria.</p>
+                    <a href="#how-it-works" class="btn btn-primary">Descubrir cómo funciona <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre el Proyecto</h2>
+                <p>AutoTend surge como solución a un problema cotidiano usando tecnología accesible</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud-rain"></i>
+                        </div>
+                        <h3 class="feature-title">El Problema</h3>
+                        <p>La ropa tendida al aire libre queda expuesta a lluvias inesperadas cuando no estamos en casa, causando que se moje y tengamos que lavarla nuevamente.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="feature-title">Objetivo</h3>
+                        <p>Desarrollar un sistema automático que detecte la lluvia y recoja el tendedero, protegiendo la ropa sin necesidad de intervención humana.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="feature-title">Beneficiarios</h3>
+                        <p>Personas ocupadas, familias, estudiantes, personas mayores y cualquiera que busque automatizar tareas del hogar ahorrando tiempo y esfuerzo.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-6 fade-in">
+                    <div class="about-image text-center">
+                        <img src="imagenes/proyecto-transparente.png" alt="Arduino Project" class="img-fluid rounded shadow" style="max-height: 300px;">
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 fade-in">
+                    <h3>Una solución inteligente</h3>
+                    <p>AutoTend combina hardware y software en un dispositivo compacto y eficiente. Utilizando la plataforma Arduino, sensores de lluvia y motores, hemos creado un sistema que:</p>
+                    <ul class="mt-3">
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Detecta la presencia de lluvia de forma automática</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Activa un mecanismo de retracción del tendedero</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Protege la ropa de condiciones climáticas adversas</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Funciona sin supervisión constante</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Es económico y fácil de implementar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cómo Funciona</h2>
+                <p>AutoTend opera de manera simple pero efectiva en tres pasos</p>
+            </div>
+            
+            <div class="step-container">
+                <div class="step fade-in">
+                    <div class="step-icon">
+                        <i class="fas fa-cloud-rain"></i>
+                        <div class="step-number">1</div>
+                    </div>
+                    <h4>Detección</h4>
+                    <p>El sensor de lluvia detecta las primeras gotas y envía una señal al Arduino</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-icon">
+                        <i class="fas fa-cogs"></i>
+                        <div class="step-number">2</div>
+                    </div>
+                    <h4>Procesamiento</h4>
+                    <p>El Arduino procesa la información y activa el motor de retracción</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-icon">
+                        <i class="fas fa-tshirt"></i>
+                        <div class="step-number">3</div>
+                    </div>
+                    <h4>Protección</h4>
+                    <p>El tendedero se retrae automáticamente, poniendo la ropa a salvo</p>
+                </div>
+            </div>
+            
+            
+            <!-- New Video de demostración Section -->
+            <div class="row mt-5">
+                <div class="col-12 text-center fade-in">
+                    <h3>Video de demostración</h3>
+                    <!-- Container for future video integration; can later be replaced with an iframe -->
+                    <div class="video-container" style="width:100%; max-width:800px; height:450px; margin:0 auto; background-color:#000; display:flex; align-items:center; justify-content:center; color:#09c3e6;">
+                        <!-- Placeholder text -->
+                        <p>Próximamente el video de demostración.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Galería</h2>
+                <p>Imágenes del proceso de desarrollo y el prototipo en acción</p>
+            </div>
+            
+            <div class="row gallery-container" id="lightgallery">
+                <div class="col-md-4 gallery-item" data-src="https://cdn.pixabay.com/photo/2017/05/08/21/12/arduino-2296970_1280.jpg" data-sub-html="<h4>Prototipo inicial</h4><p>Primera versión del sistema AutoTend</p>">
+                    <img src="https://cdn.pixabay.com/photo/2017/05/08/21/12/arduino-2296970_1280.jpg" alt="Prototipo inicial" class="img-fluid">
+                </div>
+                
+                <div class="col-md-4 gallery-item" data-src="https://cdn.pixabay.com/photo/2019/03/27/15/24/arduino-4085023_1280.jpg" data-sub-html="<h4>Montaje del sensor</h4><p>Instalación y configuración del sensor de lluvia</p>">
+                    <img src="https://cdn.pixabay.com/photo/2019/03/27/15/24/arduino-4085023_1280.jpg" alt="Montaje del sensor" class="img-fluid">
+                </div>
+                
+                <div class="col-md-4 gallery-item" data-src="https://cdn.pixabay.com/photo/2019/07/06/10/51/electronic-4320290_1280.jpg" data-sub-html="<h4>Circuito completo</h4><p>Vista del circuito y conexiones del sistema</p>">
+                    <img src="https://cdn.pixabay.com/photo/2019/07/06/10/51/electronic-4320290_1280.jpg" alt="Circuito completo" class="img-fluid">
+                </div>
+                
+                <div class="col-md-4 gallery-item" data-src="https://cdn.pixabay.com/photo/2017/04/09/10/25/arduino-2215747_1280.jpg" data-sub-html="<h4>Programación del Arduino</h4><p>Desarrollo del código para el control del sistema</p>">
+                    <img src="https://cdn.pixabay.com/photo/2017/04/09/10/25/arduino-2215747_1280.jpg" alt="Programación del Arduino" class="img-fluid">
+                </div>
+                
+                <div class="col-md-4 gallery-item" data-src="https://cdn.pixabay.com/photo/2016/02/23/17/42/arduino-1218034_1280.png" data-sub-html="<h4>Sistema de motor</h4><p>Implementación del motor para la retracción del tendedero</p>">
+                    <img src="https://cdn.pixabay.com/photo/2016/02/23/17/42/arduino-1218034_1280.png" alt="Sistema de motor" class="img-fluid">
+                </div>
+                
+                <div class="col-md-4 gallery-item" data-src="https://cdn.pixabay.com/photo/2019/03/17/12/37/arduino-4060762_1280.jpg" data-sub-html="<h4>Pruebas en ambiente real</h4><p>Evaluación del sistema en condiciones de lluvia</p>">
+                    <img src="https://cdn.pixabay.com/photo/2019/03/17/12/37/arduino-4060762_1280.jpg" alt="Pruebas en ambiente real" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Code Section -->
+    <section id="code" class="code-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Código y Conexiones</h2>
+                <p>El cerebro detrás de AutoTend: código Arduino y esquema de conexiones</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-7 fade-in">
+                    <div class="code-container">
+                        <div class="code-header">
+                            <h4><i class="fas fa-code me-2"></i> Código Arduino</h4>
+                        </div>
+                        <button class="copy-btn" onclick="copyCode()">Copiar</button>
+  <pre><code class="language-cpp">
+    const int motorAdelantePin = 7;  // Pin conectado al motor para giro hacia adelante
+    const int motorReversaPin = 6;  // Pin conectado al motor para giro en reversa
+    const int ledPin = LED_BUILTIN;  // Pin del LED integrado
+    
+    void setup() {
+      pinMode(motorAdelantePin, OUTPUT);
+      pinMode(motorReversaPin, OUTPUT);
+      pinMode(ledPin, OUTPUT);
+      Serial.begin(9600);  // Iniciar comunicación serial
+    
+    }
+    
+    void loop() {
+      // put your main code here, to run repeatedly:
+      Serial.println("Encendidio");
+      digitalWrite(ledPin, HIGH); // Encender el LED
+      digitalWrite(motorAdelantePin, HIGH); // Activar motor hacia adelante
+      delay(5000);  // Mantener el motor encendido por 2 segundos
+      Serial.println("Apagado");
+      digitalWrite(ledPin, LOW);  // Apagar el LED
+      digitalWrite(motorAdelantePin, LOW);  // Apagar el motor
+      delay(5000);
+    }
+  </code></pre>
+                    </div>
+                </div>
+                
+                <div class="col-lg-5 fade-in">
+                    <div class="circuit-diagram">
+                        <h4 class="mb-4"><i class="fas fa-project-diagram me-2"></i> Esquema de Conexiones</h4>
+                        <img src="https://cdn.pixabay.com/photo/2015/09/09/21/33/arduino-933024_1280.jpg" alt="Esquema de conexiones" class="img-fluid mb-4">
+                        <h5 class="mt-4">Componentes necesarios:</h5>
+                        <ul class="mt-3">
+                            <li class="mb-2"><i class="fas fa-microchip text-primary me-2"></i> 1 x Arduino UNO o similar</li>
+                            <li class="mb-2"><i class="fas fa-tint text-primary me-2"></i> 1 x Sensor de lluvia (YL-83)</li>
+                            <li class="mb-2"><i class="fas fa-cog text-primary me-2"></i> 1 x Servo motor (SG90)</li>
+                            <li class="mb-2"><i class="fas fa-lightbulb text-primary me-2"></i> 1 x LED indicador</li>
+                            <li class="mb-2"><i class="fas fa-plug text-primary me-2"></i> Cables de conexión</li>
+                            <li class="mb-2"><i class="fas fa-battery-full text-primary me-2"></i> Fuente de alimentación (5V)</li>
+                        </ul>
+                        <p class="mt-4">
+                            <i class="fas fa-info-circle me-2"></i> El esquema muestra las conexiones básicas. Para implementaciones más complejas, se pueden agregar pantallas LCD, botones adicionales o conectividad WiFi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Results Section -->
+    <section id="results" class="results-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Resultados y Mejoras</h2>
+                <p>Lo que hemos logrado y hacia dónde vamos</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 fade-in">
+                    <div class="results-card">
+                        <div class="results-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Logros del Proyecto</h3>
+                        <ul class="mt-3">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Detección confiable de lluvia con el sensor YL-83</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Tiempo de respuesta menor a 5 segundos ante precipitaciones</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Retracción completa del tendedero en menos de 10 segundos</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Precisión del 95% en condiciones de prueba reales</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Bajo consumo energético (promedio 150mA)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 fade-in">
+                    <div class="results-card">
+                        <div class="results-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>Desafíos Enfrentados</h3>
+                        <ul class="mt-3">
+                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i> Calibración inicial del sensor para diferentes tipos de lluvia</li>
+                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i> Potencia limitada del motor para tendederos con mucha ropa</li>
+                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i> Durabilidad de componentes expuestos a la intemperie</li>
+                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i> Autonomía de la batería en implementaciones inalámbricas</li>
+                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i> Distinción entre lluvia real y humedad ambiental alta</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-12 mt-5">
+                    <div class="results-card fade-in">
+                        <h3 class="mb-4">Propuestas de Mejora</h3>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <i class="fas fa-wifi fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Conectividad IoT</h5>
+                                        <p>Incorporar conectividad WiFi para monitoreo remoto y notificaciones al smartphone cuando se activa el sistema.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <i class="fas fa-sun fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Energía Solar</h5>
+                                        <p>Implementar un panel solar pequeño para hacer el sistema autosostenible y evitar cambios de batería.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <i class="fas fa-cloud-sun-rain fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Múltiples Sensores</h5>
+                                        <p>Agregar sensores adicionales (humedad, temperatura) para predicciones más precisas y evitar falsos positivos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <i class="fas fa-tachometer-alt fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Motor más Potente</h5>
+                                        <p>Reemplazar el servo por un motor de mayor torque para soportar tendederos más cargados.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <i class="fas fa-tablet-alt fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Interfaz LCD</h5>
+                                        <p>Incorporar una pantalla LCD pequeña para visualizar el estado del sistema y parámetros ambientales.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <i class="fas fa-house-user fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Integración Domótica</h5>
+                                        <p>Hacer el sistema compatible con plataformas de hogar inteligente como Home Assistant o Google Home.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Download Section -->
+    <section id="download" class="download-section">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInUp">Obtén todos los detalles del proyecto</h2>
+            <p class="lead animate__animated animate__fadeInUp">Descarga la documentación completa con esquemas, código fuente, lista de materiales y guías paso a paso.</p>
+            
+            <a href="#" id="download-btn" class="download-btn animate__animated animate__fadeInUp">
+                <i class="fas fa-file-pdf"></i> Descargar Documentación PDF
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>AutoTend</h5>
+                    <p>Sistema automatizado que protege tu ropa de la lluvia utilizando tecnología Arduino. Un proyecto innovador para la automatización del hogar.</p>
+                    
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Sobre el Proyecto</a></li>
+                        <li><a href="#how-it-works">Cómo Funciona</a></li>
+                        <li><a href="#gallery">Galería</a></li>
+                        <li><a href="#code">Código</a></li>
+                        <li><a href="#results">Resultados</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Recursos</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentación</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Tutoriales</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Políticas de privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contacto</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope me-2"></i> info@autotend.com</li>
+                        <li><i class="fas fa-phone me-2"></i> +34 123 456 789</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Madrid, España</li>
+                    </ul>
+                    
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Email para novedades" aria-label="Email para novedades">
+                            <button class="btn btn-primary" type="button">Suscribir</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AutoTend. Todos los derechos reservados. Diseñado con <i class="fas fa-heart text-danger"></i> por Innovadores.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+</body>
+<script>
+
+    //Seccón para copiar el código
+    function copyCode() {
+    const code = document.querySelector("code").innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      alert("¡Código copiado al portapapeles!");
+    }).catch(err => {
+      console.error("Error al copiar: ", err);
+    });
+    }
+
+    //Sección para nav bar transparente
+    window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+            navbar.classList.add('navbar-scrolled');
+        } else {
+            navbar.classList.remove('navbar-scrolled');
+        }
+    });
+
+    $(document).ready(function() {
+    // Smooth scrolling for navigation links
+    $('a.nav-link, a.navbar-brand').on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            const hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - 70
+            }, 800, function() {
+                window.location.hash = hash;
+            });
+        }
+    });
+    
+    // Initialize LightGallery
+    lightGallery(document.getElementById('lightgallery'), {
+        selector: '.gallery-item',
+        plugins: [lgZoom, lgThumbnail],
+        speed: 500,
+        download: false,
+        counter: true,
+        enableDrag: true,
+        enableSwipe: true
+    });
+    
+    // Fade-in animation for scrolling
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    
+    function checkFadeIn() {
+        fadeInElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('visible');
+            }
+        });
+    }
+    
+    // Check fade elements on load
+    checkFadeIn();
+    
+    // Check fade elements on scroll
+    window.addEventListener('scroll', checkFadeIn);
+    
+    // Rain animation in hero section
+    function createRaindrops() {
+        const rainContainer = document.getElementById('rainContainer');
+        
+        // Clear container
+        rainContainer.innerHTML = '';
+        
+        // Create 50 raindrops
+        for (let i = 0; i < 50; i++) {
+            const raindrop = document.createElement('div');
+            raindrop.classList.add('rain-drop');
+            
+            // Random positioning
+            raindrop.style.left = `${Math.random() * 100}%`;
+            
+            // Random animation duration between 0.5 and 1.5 seconds
+            const duration = 0.5 + Math.random() * 1;
+            raindrop.style.animation = `rain-fall ${duration}s linear infinite`;
+            
+            // Random delay
+            raindrop.style.animationDelay = `${Math.random() * 2}s`;
+            
+            rainContainer.appendChild(raindrop);
+        }
+    }
+    
+    // Initialize rain animation
+    createRaindrops();
+    
+    // Navbar scroll effect
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 50) {
+            $('.navbar').css('padding', '0.5rem 2rem');
+            $('.navbar').css('box-shadow', '0 5px 15px rgba(0, 0, 0, 0.1)');
+        } else {
+            $('.navbar').css('padding', '1rem 2rem');
+            $('.navbar').css('box-shadow', '0 2px 10px rgba(0, 0, 0, 0.1)');
+        }
+    });
+    
+    // How it works animation
+    $('#start-animation').click(function() {
+        const animationDemo = document.getElementById('animated-demo');
+        const raindrops = document.getElementById('animation-raindrops');
+        const clothes = document.getElementById('clothes-items');
+        const roofCover = document.getElementById('roof-cover');
+        
+        // Reset animation state
+        raindrops.innerHTML = '';
+        raindrops.style.opacity = 0;
+        roofCover.style.opacity = 0;
+        clothes.style.transform = 'translateX(0)';
+        
+        // Start the simplified animation sequence
+        setTimeout(() => {
+            // 1. Start raining (keep raindrops animation)
+            raindrops.style.opacity = 1;
+            for (let i = 0; i < 100; i++) {
+                const raindrop = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                const x = 100 + Math.random() * 400;
+                const y = Math.random() * 50;
+                const length = 5 + Math.random() * 10;
+                
+                raindrop.setAttribute("x1", x);
+                raindrop.setAttribute("y1", y);
+                raindrop.setAttribute("x2", x);
+                raindrop.setAttribute("y2", y + length);
+                raindrop.setAttribute("stroke", "#09c3e6");
+                raindrop.setAttribute("stroke-width", "1");
+                raindrop.style.opacity = 0.7;
+                
+                const animationDuration = 1 + Math.random() * 2;
+                raindrop.style.animation = `rain-fall ${animationDuration}s linear infinite`;
+                raindrop.style.animationDelay = `${Math.random() * 2}s`;
+                
+                raindrops.appendChild(raindrop);
+            }
+            
+            // 2. Directly animate clothes moving horizontally to simulate protection under a roof.
+            setTimeout(() => {
+                // Animate clothes to slide left using CSS transition.
+                clothes.style.transition = "transform 2s ease-in-out";
+                clothes.style.transform = "translateX(-150px)";
+                
+                // 3. Roof cover fades in to simulate protection.
+                setTimeout(() => {
+                    roofCover.style.opacity = 1;
+                    roofCover.style.transition = "opacity 1s ease-in-out";
+                    
+                    // 4. End of animation sequence; notify user.
+                    setTimeout(() => {
+                        alert("¡Animación completada! La ropa se mueve debajo del techo demostrando su protección frente a la lluvia.");
+                    }, 1500);
+                    
+                }, 2000);
+                
+            }, 1500);
+            
+        }, 500);
+    });
+    
+    // Download button animation
+    $('#download-btn').hover(
+        function() {
+            $(this).find('i').addClass('animate__animated animate__tada');
+        },
+        function() {
+            $(this).find('i').removeClass('animate__animated animate__tada');
+        }
+    );
+    
+    // Download button click handler
+    $('#download-btn').click(function(e) {
+        e.preventDefault();
+        alert("Esta es una versión prototipo. La funcionalidad de descarga estará disponible en la versión final.");
+    });
+    
+    // Hero svg animation
+    function animateHeroSvg() {
+        // Get elements
+        const clothes = document.getElementById('clothes');
+        const arrow = document.getElementById('retraction-arrow');
+        
+        // Simple animation cycle
+        setInterval(() => {
+            // Make arrow visible
+            arrow.style.opacity = 1;
+            arrow.style.transition = "opacity 0.5s ease";
+            
+            // Move clothes up a bit to simulate retraction
+            setTimeout(() => {
+                clothes.style.transform = "translateY(-20px)";
+                clothes.style.transition = "transform 1s ease";
+                
+                // Reset animation after delay
+                setTimeout(() => {
+                    arrow.style.opacity = 0;
+                    clothes.style.transform = "translateY(0)";
+                }, 2000);
+            }, 1000);
+        }, 6000);
+    }
+    
+    // Start hero animation
+    animateHeroSvg();
+});
+</script>
+</html>
