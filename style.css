@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+  }
+
 :root {
     --primary-color: #f4978e;
     --secondary-color: #121212;
@@ -18,7 +22,7 @@
 
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
     background-color: #f9f9f9;
     color: var(--dark-color);
@@ -63,8 +67,10 @@ ul {
 }
 
 .hero {
+    opacity: 0;
+    transition: opacity 1s ease-in;
     /* background: linear-gradient(135deg, var(--secondary-color) 0%, #1a1a1a 100%); */
-    background-image: url('imagenes/clouds.jpg');
+    background-image: url('imagenes/AutoTend2.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -72,38 +78,22 @@ ul {
     padding: 6rem 0;
     position: relative;
     overflow: hidden;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    opacity: 0.1;
-    top: -100px;
-    right: -100px;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    opacity: 0.1;
-    bottom: -50px;
-    left: -50px;
-}
+    min-height: 70vh;
+    max-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero.loaded {
+    opacity: 1;
+  }
 
 .hero h1 {
     font-size: 4rem;
     font-weight: 800;
     margin-bottom: 1rem;
     background-color: #ffffff;
-    background: linear-gradient(to right, #ffffff, var(--icon-color));
+    background: linear-gradient(to right, #fff5f5, #ffbc9b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -114,21 +104,85 @@ ul {
     color: #e0e0e0;
 }
 
+.glass-wall {
+position: absolute;
+top: 0;
+left: 0;
+width: 45%;
+height: 100%;
+background: rgba(255, 255, 255, 0.1); /* vidrio claro */
+backdrop-filter: blur(10px); /* efecto blur */
+-webkit-backdrop-filter: blur(10px); /* para Safari */
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 2rem;
+z-index: 2;
+border-top-right-radius: 2rem;
+border-bottom-right-radius: 2rem;
+}
+
+.glass-content {
+    color: white;
+    text-align: left;
+    max-width: 500px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  
+    height: 100%;
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+
+.glass-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .glass-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+/* 📱 Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .glass-wall {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      border-radius: 0; /* eliminamos los bordes redondeados laterales */
+      padding: 2rem 1rem;
+    }
+
+    .hero{
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+    }
+  
+    .glass-content {
+      text-align: center; /* centramos el texto */
+      animation-delay: 0.3s;
+    }
+  }
+
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     padding: 0.75rem 2rem;
     font-weight: 600;
     border-radius: 30px;
-    box-shadow: 0 4px 15px rgba(9, 195, 230, 0.3);
+    box-shadow: 0 4px 15px rgba(230, 119, 9, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .btn-primary:hover {
-    background-color: #08b1d3;
-    border-color: #08b1d3;
+    background-color: #d3087e;
+    border-color: #d3084c;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(9, 195, 230, 0.4);
+    box-shadow: 0 6px 20px rgba(230, 72, 9, 0.4);
 }
 
 section {
@@ -320,7 +374,7 @@ section {
 }
 
 .code-section {
-    background-color: #f1f7f9;
+    background-color: #f9f1f1;
 }
 
 .code-container {
@@ -349,7 +403,7 @@ section {
 .code-container pre {
     max-height: 400px;
     overflow-y: auto;
-    background-color: #262a4d; /* Azul oscuro con tono grisáceo */
+    background-color: var(--dark-color); /* Azul oscuro con tono grisáceo */
     color: #ecf0f1; /* Texto claro para buen contraste */
     padding: 15px;
     border-radius: 5px;
@@ -534,6 +588,17 @@ pre {
     transform: translateY(0);
 }
 
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 /* Rain Animation */
 .rain-container {
     position: absolute;
@@ -549,7 +614,7 @@ pre {
     position: absolute;
     width: 2px;
     height: 15px;
-    background-color: rgba(130, 222, 255, 0.422);
+    background-color: rgba(255, 255, 255, 0.755);
     top: -15px;
     animation: rain-fall linear infinite;
 }

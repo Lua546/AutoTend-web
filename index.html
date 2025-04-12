@@ -64,17 +64,12 @@
         <div class="rain-container" id="rainContainer"></div>
         <div class="container">
             <div class="row align-items-center">
-                <!-- Columna de la imagen -->
-                <div class="col-lg-6 animate__animated animate__fadeInLeft text-center mb-4 mb-lg-0">
-                    <img src="imagenes/proyecto-transparente.png" alt="Imagen del proyecto" class="img-fluid" style="max-width: 100%; height: auto;">
-                </div>
-                
-                <!-- Columna del texto -->
-                <div class="col-lg-6 animate__animated animate__fadeInRight">
-                    <h1>Auto<span style="color: var(--primary-color);">Tend</span></h1>
-                    <p class="lead">Tecnología al servicio del hogar</p>
-                    <p class="mb-4">Sistema automatizado que protege tu ropa de la lluvia sin intervención humana. Innovación Arduino para tu vida diaria.</p>
-                    <a href="#how-it-works" class="btn btn-primary">Descubrir cómo funciona <i class="fas fa-arrow-right ms-2"></i></a>
+                <div class="glass-wall">
+                    <div class="glass-content">
+                            <h1>Auto<span style="color: var(--primary-color);">Tend</span></h1>
+                            <p class="mb-4">Sistema automatizado que protege tu ropa de la lluvia sin intervención humana. Innovación Arduino para tu vida diaria.</p>
+                            <a href="#how-it-works" class="btn btn-primary">Descubrir cómo funciona <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -124,7 +119,7 @@
             <div class="row mt-5">
                 <div class="col-lg-6 fade-in">
                     <div class="about-image text-center">
-                        <img src="imagenes/autotend-volley.png" alt="Arduino Project" class="img-fluid rounded shadow" style="max-height: 300px;">
+                        <img src="imagenes/AutoTend.png" alt="Arduino Project" class="img-fluid rounded shadow" style="max-height: 300px;">
                     </div>
                 </div>
                 
@@ -312,7 +307,7 @@ void loop() {
                 <div class="col-lg-5 fade-in">
                     <div class="circuit-diagram">
                         <h4 class="mb-4"><i class="fas fa-project-diagram me-2"></i> Esquema de Conexiones</h4>
-                        <img src="https://cdn.pixabay.com/photo/2015/09/09/21/33/arduino-933024_1280.jpg" alt="Esquema de conexiones" class="img-fluid mb-4">
+                        <img src="imagenes/prototipo.png" alt="Esquema de conexiones" class="img-fluid mb-4">
                         <h5 class="mt-4">Componentes necesarios:</h5>
                         <ul class="mt-3">
                             <li class="mb-2"><i class="fas fa-microchip icon-color me-2"></i> 1 x Arduino UNO o similar</li>
@@ -322,9 +317,9 @@ void loop() {
                             <li class="mb-2"><i class="fas fa-plug icon-color me-2"></i> Cables de conexión</li>
                             <li class="mb-2"><i class="fas fa-battery-full icon-color me-2"></i> Fuente de alimentación (5V)</li>
                         </ul>
-                        <p class="mt-4">
+                        <!-- <p class="mt-4">
                             <i class="fas fa-info-circle me-2"></i> El esquema muestra las conexiones básicas. Para implementaciones más complejas, se pueden agregar pantallas LCD, botones adicionales o conectividad WiFi.
-                        </p>
+                        </p> -->
                     </div>
                 </div>
             </div>
@@ -460,7 +455,7 @@ void loop() {
             <h2 class="animate__animated animate__fadeInUp">Obtén todos los detalles del proyecto</h2>
             <p class="lead animate__animated animate__fadeInUp">Descarga la documentación completa con esquemas, código fuente y lista de materiales.</p>
             
-            <a href="#" id="download-btn" class="download-btn animate__animated animate__fadeInUp">
+            <a id="download-btn" href="AutoTend - Documentación.pdf" class="download-btn animate__animated animate__fadeInUp" target="_blank" rel="noopener noreferrer">
                 <i class="fas fa-file-pdf"></i> Descargar Documentación PDF
             </a>
         </div>
@@ -513,6 +508,10 @@ void loop() {
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
 </body>
 <script>
+
+    window.addEventListener('load', () => {
+    document.querySelector('.hero').classList.add('loaded');
+    });
 
     //Seccón para copiar el código
     function copyCode() {
@@ -689,12 +688,6 @@ void loop() {
             $(this).find('i').removeClass('animate__animated animate__tada');
         }
     );
-    
-    // Download button click handler
-    $('#download-btn').click(function(e) {
-        e.preventDefault();
-        alert("Esta es una versión prototipo. La funcionalidad de descarga estará disponible en la versión final.");
-    });
     
     // Hero svg animation
     function animateHeroSvg() {
