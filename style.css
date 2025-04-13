@@ -70,7 +70,8 @@ ul {
     opacity: 0;
     transition: opacity 0.5s ease-in;
     /* background: linear-gradient(135deg, var(--secondary-color) 0%, #1a1a1a 100%); */
-    background-image: url('imagenes/AutoTend2.jpeg');
+    background-image: url('imagenes/autotend-volley.png');
+    background-color: #D97E4A;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -87,7 +88,7 @@ ul {
   .hero.loaded {
     opacity: 1;
   }
-
+  
 .hero h1 {
     font-size: 4rem;
     font-weight: 800;
