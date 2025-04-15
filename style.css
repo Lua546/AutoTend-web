@@ -83,6 +83,8 @@ ul {
     max-height: 80vh;
     display: flex;
     align-items: center;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
   }
 
   .hero.loaded {
@@ -94,7 +96,7 @@ ul {
     font-weight: 800;
     margin-bottom: 1rem;
     background-color: #ffffff;
-    background: linear-gradient(to right, #fff5f5, #ffbc9b);
+    background: linear-gradient(to right, #fff5f5, #f08080);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -392,6 +394,7 @@ section {
     width: 100%;
     height: 250px;
     object-fit: cover;
+    border-radius: 1rem;
 }
 
 .code-section {
