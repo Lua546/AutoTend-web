@@ -259,51 +259,80 @@
                         </div>
                         
   <pre><code class="language-cpp">
-// Definir los pines
-const int sensorLluviaPin = A0;  // Pin conectado al sensor de lluvia
-const int motorAdelantePin = 7;  // Pin conectado al motor para giro hacia adelante
-const int motorReversaPin = 8;  // Pin conectado al motor para giro en reversa
-const int motorVelocidadPin = 9; // Pin conectado para regular la velocidad
-
-// Variable para rastrear el estado del sensor
-bool estadoSensorAnterior = LOW; // Almacena el estado previo del sensor
-
-void setup() {
-  pinMode(sensorLluviaPin, INPUT);
-  pinMode(motorAdelantePin, OUTPUT);
-  pinMode(motorReversaPin, OUTPUT);
-  pinMode(motorVelocidadPin, OUTPUT);
-
-  Serial.begin(9600);
-
-  // Asegurar que el motor esté apagado al inicio
-  digitalWrite(motorAdelantePin, LOW);
-  digitalWrite(motorReversaPin, LOW);
-}
-
-void loop() {
-  int estadoSensorActual = digitalRead(sensorLluviaPin);
-  Serial.println(digitalRead(sensorLluviaPin));
-  if (estadoSensorActual == HIGH && estadoSensorAnterior == LOW) {
-    // Comienza la lluvia: el sensor cambia de LOW a HIGH
-    Serial.println("Empezó a llover");
-    digitalWrite(motorAdelantePin, HIGH); // Activar motor hacia adelante
-    analogWrite(motorVelocidadPin, 125);    // Velocidad al máximo
-    delay(500);  // Mantener el motor encendido por 2 segundos
-    digitalWrite(motorAdelantePin, LOW);  // Apagar el motor
-  }
-  else if (estadoSensorActual == LOW && estadoSensorAnterior == HIGH) {
-    // Deja de llover: el sensor cambia de HIGH a LOW
-    Serial.println("Dejó de llover");
-    digitalWrite(motorReversaPin, HIGH); // Activar motor en reversa
-    analogWrite(motorVelocidadPin, 125);    // Velocidad al máximo
-    delay(500);  // Mantener el motor encendido por 2 segundos
-    digitalWrite(motorReversaPin, LOW);  // Apagar el motor
-  }
-
-  // Actualizar el estado previo del sensor
-  estadoSensorAnterior = estadoSensorActual;
-}
+    // Pines del sistema
+    const int sensorLluviaPin = A0;         // Pin analógico conectado al sensor de lluvia
+    const int motorAdelantePin = 7;         // Pin digital para girar el motor hacia adelante (meter la ropa)
+    const int motorReversaPin = 8;          // Pin digital para girar el motor en reversa (sacar la ropa)
+    const int motorVelocidadPin = 9;        // Pin PWM para controlar la velocidad del motor
+    const int ledLluviaPin = 13;            // LED integrado en la placa, usado como indicador visual
+    
+    // Umbral del sensor para detectar lluvia
+    const int umbralLluvia = 500;           // Valor analógico menor a 500 indica que el sensor está mojado
+    
+    // Variable para recordar si está lloviendo o no
+    bool estaLloviendo = false;
+    
+    void setup() {
+      // Configurar los pines como salida o entrada
+      pinMode(motorAdelantePin, OUTPUT);
+      pinMode(motorReversaPin, OUTPUT);
+      pinMode(motorVelocidadPin, OUTPUT);
+      pinMode(ledLluviaPin, OUTPUT);
+    
+      // Iniciar comunicación serial para monitoreo
+      Serial.begin(9600);
+    
+      // Asegurar que el motor y el LED estén apagados al inicio
+      digitalWrite(motorAdelantePin, LOW);
+      digitalWrite(motorReversaPin, LOW);
+      digitalWrite(ledLluviaPin, LOW);
+    }
+    
+    void loop() {
+      // Leer el valor del sensor de lluvia (0 a 1023)
+      int valorSensor = analogRead(sensorLluviaPin);
+      Serial.print("Valor sensor lluvia: ");
+      Serial.println(valorSensor);
+    
+      // Evaluar si el valor indica que está lloviendo
+      bool lluviaDetectada = valorSensor < umbralLluvia;
+    
+      // Si empieza a llover y antes no llovía
+      if (lluviaDetectada && !estaLloviendo) {
+        Serial.println("Empezó a llover");
+        estaLloviendo = true;  // Actualizar el estado
+    
+        // Encender el motor para meter la ropa
+        digitalWrite(motorAdelantePin, HIGH);
+        analogWrite(motorVelocidadPin, 200); // Establecer velocidad media
+        digitalWrite(ledLluviaPin, HIGH);    // Encender el LED como indicador de lluvia
+    
+        delay(400); // Esperar mientras el motor funciona
+    
+        // Apagar el motor después de operar
+        digitalWrite(motorAdelantePin, LOW);
+      }
+    
+      // Si deja de llover y antes estaba lloviendo
+      else if (!lluviaDetectada && estaLloviendo) {
+        Serial.println("Dejó de llover");
+        estaLloviendo = false; // Actualizar el estado
+    
+        // Encender el motor en reversa para sacar la ropa
+        digitalWrite(motorReversaPin, HIGH);
+        analogWrite(motorVelocidadPin, 200); // Velocidad media
+        digitalWrite(ledLluviaPin, LOW);     // Apagar el LED
+    
+        delay(400); // Esperar mientras el motor funciona
+    
+        // Apagar el motor después de operar
+        digitalWrite(motorReversaPin, LOW);
+      }
+    
+      // Esperar un poco antes de la siguiente lectura para evitar lecturas inestables
+      delay(200);
+    }
+    
   </code></pre>
   <button class="btn btn-primary" onclick="copyCode()" style="margin-top: 10px;">Copiar</button>
                     </div>
